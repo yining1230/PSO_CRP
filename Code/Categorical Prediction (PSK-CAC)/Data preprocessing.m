@@ -11,9 +11,9 @@ data = trainData;
 
 % Read external index data from Excel
 [data1, textdata1, raw1] = xlsread('\Example_Rxn_Data.xlsx', 'pd_idx', 'A56:C100');
-% [data1, textdata1, raw1] = xlsread('C:\Users\DELL\Desktop\hte\rdkit\rdkit_para.xlsx', 'rdall_pidx', 'A1:C1076');
-% [data1, textdata1, raw1] = xlsread('C:\Users\DELL\Desktop\aaaa.xlsx', 'sheet8', 'Y1:Z26');
-% [data1, textdata1, raw1] = xlsread('C:\Users\29868\Desktop\aaaa.xlsx', 'sheet6', 'A1:B38');
+% [data1, textdata1, raw1] = xlsread('\rdkit_para.xlsx', 'rdall_pidx', 'A1:C1076');
+% [data1, textdata1, raw1] = xlsread('\aaaa.xlsx', 'sheet8', 'Y1:Z26');
+% [data1, textdata1, raw1] = xlsread('\aaaa.xlsx', 'sheet6', 'A1:B38');
 
 trainData_idx = data1(23:44, 2);
 data1 = trainData_idx;

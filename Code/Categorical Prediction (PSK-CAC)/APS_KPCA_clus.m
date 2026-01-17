@@ -27,9 +27,9 @@ trainData = data(shuffledIndices(1:trainSize),:);
 validationData = data(shuffledIndices(trainSize+1:end),:);
 data = trainData;
 
-[data1,textdata1,raw1]=xlsread('E:\CNN\hte_170_sigman\sigman_170.xlsx','conversion','A1:C171');
-% [data1,textdata1,raw1]=xlsread('C:\Users\DELL\Desktop\aaaa.xlsx','sheet8','Y1:Z26');
-%         [data1,textdata1,raw1]=xlsread('C:\Users\29868\Desktop\aaaa.xlsx','sheet6','A1:B38');
+[data1,textdata1,raw1]=xlsread('\sigman_170.xlsx','conversion','A1:C171');
+% [data1,textdata1,raw1]=xlsread('\aaaa.xlsx','sheet8','Y1:Z26');
+%         [data1,textdata1,raw1]=xlsread('\aaaa.xlsx','sheet6','A1:B38');
 trainData_idx = data1(shuffledIndices(1:trainSize),2);
 data1 = trainData_idx;
 %% 

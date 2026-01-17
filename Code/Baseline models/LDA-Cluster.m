@@ -292,7 +292,7 @@ for j=1:size(idx_zong,2)
     n=size(dlY,2);
     A_fenlei=zeros(m,n); 
 
-    % [data1,textdata1,raw1]=xlsread('C:\Users\DELL\Desktop\aaaa.xlsx','sheet5','H1:L48');
+    % [data1,textdata1,raw1]=xlsread('aaaa.xlsx','sheet5','H1:L48');
     % data1 = evalin('base', 'data1');
 
     b_fenlei=data1(:,1);
@@ -302,7 +302,7 @@ for j=1:size(idx_zong,2)
         A_fenlei(i,b_fenlei(i))=1
     end
     targets=A_fenlei;
-    % [data1,textdata1,raw1]=xlsread('C:\Users\29868\Desktop\aaaa.xlsx','sheet5','H1:K48');
+    % [data1,textdata1,raw1]=xlsread('aaaa.xlsx','sheet5','H1:K48');
     % targets=data1;
     targets = single(targets);
     size(targets)
@@ -368,7 +368,7 @@ end
 method
 
 %% predictions on new data
-% [datap,textdatap,rawp]=xlsread('C:\Users\DELL\Desktop\10noise_0.03.xlsx','Sheet1','A1:H11');
+% [datap,textdatap,rawp]=xlsread('noise_0.03.xlsx','Sheet1','A1:H11');
 datap = validationData;
 datap_norm = [];
 

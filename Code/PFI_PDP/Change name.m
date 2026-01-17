@@ -2,7 +2,7 @@ clear
 clc
 
 % Read Excel file
-[data, txt, raw] = xlsread('E:\PhD_Year2\anli\hte\rdkit\rdkit_para.xlsx', 'rdkit', 'A1:XE1076');
+[data, txt, raw] = xlsread('rdkit_para.xlsx', 'rdkit', 'A1:XE1076');
 
 % Extract parameter names from the first row
 parameters = raw(1, :); % The first row contains parameter names

@@ -5,7 +5,7 @@ clc
 % load data_Pd_all_23-44;
 load data_170_rd.mat data;
 
-[data1,textdata1,raw1]=xlsread('E:\博二\anli\hte_170_sigman\170_sigman2024Enantioselective Sulfonimidamide Acylation via a Cinchona.xlsx','Sheet3','G1:M171');
+[data1,textdata1,raw1]=xlsread('\170_sigman2024Enantioselective Sulfonimidamide Acylation via a Cinchona.xlsx','Sheet3','G1:M171');
 Designation = raw1(2:end, 7);
 idx_train = strcmp(Designation, 'train'); 
 idx_test = strcmp(Designation, 'test');   
@@ -274,7 +274,7 @@ for j=1:size(idx_zong,2)
     n=size(dlY,2);
     A_fenlei=zeros(m,n); 
 
-    % [data1,textdata1,raw1]=xlsread('C:\Users\DELL\Desktop\aaaa.xlsx','sheet5','H1:L48');
+    % [data1,textdata1,raw1]=xlsread('\aaaa.xlsx','sheet5','H1:L48');
     % data1 = evalin('base', 'data1');
 
     b_fenlei=data1(:,1);
@@ -284,7 +284,7 @@ for j=1:size(idx_zong,2)
         A_fenlei(i,b_fenlei(i))=1
     end
     targets=A_fenlei;
-    % [data1,textdata1,raw1]=xlsread('C:\Users\29868\Desktop\aaaa.xlsx','sheet5','H1:K48');
+    % [data1,textdata1,raw1]=xlsread('\aaaa.xlsx','sheet5','H1:K48');
     % targets=data1;
     targets = single(targets);
     size(targets)
@@ -350,7 +350,7 @@ end
 method
 
 %% predictions on new data
-% [datap,textdatap,rawp]=xlsread('C:\Users\DELL\Desktop\10noise_0.03.xlsx','Sheet1','A1:H11');
+% [datap,textdatap,rawp]=xlsread('noise_0.03.xlsx','Sheet1','A1:H11');
 datap = validationData;
 datap_norm = [];
 

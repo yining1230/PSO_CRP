@@ -100,7 +100,7 @@ for i_julei=1:5
         % hidx=clusterdata(X,'maxclust',k,'distance',va_dist{1},'linkage',va_link{1});
 
     elseif i_julei==2
-        %% k-means 聚类
+        %% k-means 
         va_distk={'sqeuclidean','cityblock'}%'hamming''cos''correlation'
         va_distk{1}
         % [idx,C] = kmeans(X,4);

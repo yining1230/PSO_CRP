@@ -1,6 +1,6 @@
 clear
 clc
-[data,textdata,raw]=xlsread('E:\博二\anli\sigman_37\之前\0915rdkitqm1112.xlsx','rdkitall','A1:DE38');
+[data,textdata,raw]=xlsread('0915rdkitqm1112.xlsx','rdkitall','A1:DE38');
 rng(1);% seed
 
 % dataset split
@@ -40,15 +40,15 @@ regressionGP_zs = fitrgp(...
 Y_trainpre = predict(regressionGP_zs, X_trainpredictors);
 
 yMean_train = mean(Y_trainresponse);
-TSS_train = sum((Y_trainresponse - yMean_train).^2); % 总平方和
-RSS_train = sum((Y_trainresponse - Y_trainpre).^2); % 残差平方和
+TSS_train = sum((Y_trainresponse - yMean_train).^2); 
+RSS_train = sum((Y_trainresponse - Y_trainpre).^2); 
 R2_train = 1 - RSS_train/TSS_train;
 
 [y_pred,y_sd] = predict(regressionGP_zs, x_test);
 
 yMean_test = mean(y_test);
-TSS_test = sum((y_test - yMean_test).^2); % 总平方和
-RSS_test = sum((y_test - y_pred).^2); % 残差平方和
+TSS_test = sum((y_test - yMean_test).^2);
+RSS_test = sum((y_test - y_pred).^2); 
 R2_test = 1 - RSS_test/TSS_test;
 
 
@@ -76,7 +76,7 @@ cv = cvpartition(size(X_trainpredictors, 1), 'KFold', k);
 num_features = size(X_trainpredictors, 2);
 feature_importance = zeros(num_features, 1);
 
-R2_train_original = zeros(k, 1); % 用来存储每个折叠的R²
+R2_train_original = zeros(k, 1); 
 
 for i = 1:k
     idx_train = training(cv, i);
@@ -153,15 +153,15 @@ regressionGP_top5 = fitrgp(...
 % train set
 Y_trainpre_top5 = predict(regressionGP_top5, X_train_top5);
 yMean_train5 = mean(Y_trainresponse);
-TSS_train5 = sum((Y_trainresponse - yMean_train5).^2); % 总平方和
-RSS_train5 = sum((Y_trainresponse - Y_trainpre_top5).^2); % 残差平方和
+TSS_train5 = sum((Y_trainresponse - yMean_train5).^2); 
+RSS_train5 = sum((Y_trainresponse - Y_trainpre_top5).^2); 
 R2_train5 = 1 - RSS_train5/TSS_train5;
 
 % test set
 [y_pred_top5, y_sd_top5] = predict(regressionGP_top5, X_test_top5);
 yMean_test5 = mean(y_test);
-TSS_test5 = sum((y_test - yMean_test5).^2); % 总平方和
-RSS_test5 = sum((y_test - y_pred_top5).^2); % 残差平方和
+TSS_test5 = sum((y_test - yMean_test5).^2); 
+RSS_test5 = sum((y_test - y_pred_top5).^2); 
 R2_test5 = 1 - RSS_test5/TSS_test5;
 
 disp(['Training R^2 (Top 5 Features): ', num2str(R2_train5)]);

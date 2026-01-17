@@ -51,8 +51,8 @@ for i=1:maxgeneration
     i
     r=rmax-(rmax-rmin)*((i-1)/(maxgeneration-1));
     %  r=abs(rmax-(rmax-rmin)*exp(0.35)/(exp((i-1)/(maxgeneration-1))^0.35));
-    %      r=rmax-(rmax-rmin)*((i-1)/(maxgeneration-1))^(1/3);%可以
-    %   r=rmax-(rmax-rmin)*exp(1-maxgeneration/i);%不行
+    %      r=rmax-(rmax-rmin)*((i-1)/(maxgeneration-1))^(1/3)
+    %   r=rmax-(rmax-rmin)*exp(1-maxgeneration/i);
     w=r*sin(pi*w);
     u=mean(fitness);
 
